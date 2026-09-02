@@ -7,9 +7,9 @@ export default function SearchModal({ isOpen, onClose, onAddToCart }) {
   if (!isOpen) return null;
 
   const catalog = [
-    { id: 101, title: 'Gulmohar Chanderi Silk Chudidhar', fabric: 'Pure Chanderi', price: 4890, image: '/assets/hero-banner-1.png' },
-    { id: 102, title: 'Royal Heritage Anarkali Set', fabric: 'Mulberry Silk', price: 6250, image: '/assets/hero-banner-2.png' },
-    { id: 103, title: 'Terracotta Linen Cotton Chudidhar', fabric: 'Organic Linen', price: 3490, image: '/assets/hero-banner-3.png' }
+    { id: 101, title: 'Maharani Zari Raw Silk Chudidhar Set', fabric: 'Pure Raw Silk', price: 5890, image: '/assets/hero-banner-1.png' },
+    { id: 102, title: 'Gulmohar Handblock Pure Cotton Set', fabric: '100% Pure Cotton', price: 3490, image: '/assets/hero-banner-2.png' },
+    { id: 103, title: 'Royal Emerald Kota Doria Woven Set', fabric: 'Kota Doria Silk', price: 4290, image: '/assets/hero-banner-3.png' }
   ];
 
   const filtered = catalog.filter(c => 

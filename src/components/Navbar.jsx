@@ -27,17 +27,19 @@ export default function Navbar({ cartCount, onOpenCart, onOpenSizeGuide, onOpenS
       <div style={{
         maxWidth: '1380px',
         margin: '0 auto',
-        padding: isScrolled ? '12px 24px' : '18px 24px',
+        padding: isScrolled ? '12px 24px' : '16px 24px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         transition: 'all 0.3s ease'
       }}>
         
-        {/* Mobile Menu Toggle & Left Nav Links */}
+        {/* Left Section: Mobile Toggle, Logo & Desktop Navigation */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
+          {/* Mobile Toggle Button */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="nav-mobile-btn"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -53,94 +55,67 @@ export default function Navbar({ cartCount, onOpenCart, onOpenSizeGuide, onOpenS
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          {/* Nav Links Desktop */}
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '28px' }} className="nav-desktop">
-            <a href="#chudidhar" style={{
+          {/* Left Aligned Logo */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            cursor: 'pointer'
+          }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <img 
+              src="/assets/swanira-logo-primary.svg" 
+              alt="Swanira Logo" 
+              style={{
+                height: isScrolled ? '44px' : '56px',
+                maxWidth: '200px',
+                objectFit: 'contain',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+              onError={(e) => {
+                // Fallback to PNG logo if SVG doesn't render
+                e.target.onerror = null;
+                e.target.src = '/assets/swanira-logo-primary.png';
+              }}
+            />
+          </div>
+
+          {/* Desktop Nav Links: Raw Silk, Pure Cotton, Kota */}
+          <nav className="nav-desktop">
+            <a href="#raw-silk" style={{
               textDecoration: 'none',
               color: 'var(--color-text-main)',
               fontSize: '0.88rem',
               fontWeight: 600,
               letterSpacing: '0.04em',
               textTransform: 'uppercase',
-              transition: 'color 0.2s',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '4px'
+              transition: 'color 0.2s'
             }}>
-              Chudidhar Sets <span style={{ fontSize: '0.65rem', backgroundColor: '#C5A059', color: '#FFF', padding: '1px 6px', borderRadius: '10px' }}>HOT</span>
+              Raw Silk
             </a>
 
-            <a href="#anarkali" style={{
+            <a href="#pure-cotton" style={{
               textDecoration: 'none',
               color: 'var(--color-text-main)',
               fontSize: '0.88rem',
-              fontWeight: 500,
+              fontWeight: 600,
               letterSpacing: '0.04em',
               textTransform: 'uppercase',
               transition: 'color 0.2s'
             }}>
-              Anarkalis
+              Pure Cotton
             </a>
 
-            <a href="#silk-drapes" style={{
+            <a href="#kota" style={{
               textDecoration: 'none',
               color: 'var(--color-text-main)',
               fontSize: '0.88rem',
-              fontWeight: 500,
+              fontWeight: 600,
               letterSpacing: '0.04em',
               textTransform: 'uppercase',
               transition: 'color 0.2s'
             }}>
-              Pure Silk Couture
-            </a>
-
-            <a href="#everyday-ethnic" style={{
-              textDecoration: 'none',
-              color: 'var(--color-text-main)',
-              fontSize: '0.88rem',
-              fontWeight: 500,
-              letterSpacing: '0.04em',
-              textTransform: 'uppercase',
-              transition: 'color 0.2s'
-            }}>
-              Everyday Chanderi
+              Kota
             </a>
           </nav>
-        </div>
-
-        {/* Center Logo */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          cursor: 'pointer'
-        }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <img 
-            src="/assets/swanira-logo-primary.svg" 
-            alt="Swanira Logo - Women Chudidhar Brand" 
-            style={{
-              height: isScrolled ? '48px' : '62px',
-              maxWidth: '220px',
-              objectFit: 'contain',
-              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-            }}
-            onError={(e) => {
-              // Fallback to PNG logo if SVG doesn't render
-              e.target.onerror = null;
-              e.target.src = '/assets/swanira-logo-primary.png';
-            }}
-          />
-          <span style={{
-            fontSize: '0.65rem',
-            letterSpacing: '0.25em',
-            textTransform: 'uppercase',
-            color: 'var(--color-gold)',
-            marginTop: '-4px',
-            fontWeight: 600
-          }}>
-            Chudidhar Couture
-          </span>
         </div>
 
         {/* Right Action Icons */}
@@ -267,17 +242,14 @@ export default function Navbar({ cartCount, onOpenCart, onOpenSizeGuide, onOpenS
           gap: '16px',
           boxShadow: 'var(--shadow-md)'
         }}>
-          <a href="#chudidhar" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>
-            ✨ Chudidhar Sets (Exclusive)
+          <a href="#raw-silk" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>
+            Raw Silk
           </a>
-          <a href="#anarkali" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>
-            Designer Anarkalis
+          <a href="#pure-cotton" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>
+            Pure Cotton
           </a>
-          <a href="#silk-drapes" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>
-            Pure Silk Collections
-          </a>
-          <a href="#everyday-ethnic" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--color-text-main)', textDecoration: 'none' }}>
-            Everyday Chanderi & Cottons
+          <a href="#kota" onClick={() => setMobileMenuOpen(false)} style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>
+            Kota
           </a>
           <button 
             onClick={() => { setMobileMenuOpen(false); onOpenSizeGuide(); }}

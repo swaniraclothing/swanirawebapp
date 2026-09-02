@@ -7,39 +7,39 @@ export default function ChudidharCatalog({ onAddToCart, onOpenSizeGuide }) {
   const products = [
     {
       id: 1,
-      title: "Gulmohar Chanderi Silk Chudidhar Set",
-      category: "chanderi",
-      fabric: "Pure Chanderi Silk",
-      price: 4890,
-      originalPrice: 6500,
+      title: "Maharani Zari Handcrafted Raw Silk Chudidhar Set",
+      category: "raw-silk",
+      fabric: "100% Pure Raw Silk",
+      price: 5890,
+      originalPrice: 7500,
       rating: 4.9,
       badge: "Bestseller",
       image: "/assets/hero-banner-1.png",
-      description: "Zari woven neckline with pure organza hand-printed dupatta."
+      description: "Lustrous raw silk top with intricate zari woven neckline and matching churidar."
     },
     {
       id: 2,
-      title: "Royal Crimson Heritage Anarkali Set",
-      category: "anarkali",
-      fabric: "100% Mulberry Silk",
-      price: 6250,
-      originalPrice: 7990,
+      title: "Gulmohar Handblock Pure Cotton Chudidhar Set",
+      category: "pure-cotton",
+      fabric: "100% Organic Pure Cotton",
+      price: 3490,
+      originalPrice: 4500,
       rating: 5.0,
       badge: "Exclusive",
       image: "/assets/hero-banner-2.png",
-      description: "Full flared silhouette with scalloped zari embroidery."
+      description: "Ultra-breathable premium pure cotton with traditional Bagru hand-block prints."
     },
     {
       id: 3,
-      title: "Terracotta Organic Linen Chudidhar",
-      category: "everyday",
-      fabric: "Organic Linen Cotton",
-      price: 3490,
-      originalPrice: 4200,
+      title: "Royal Emerald Kota Doria Woven Chudidhar Set",
+      category: "kota",
+      fabric: "Handwoven Kota Doria Silk",
+      price: 4290,
+      originalPrice: 5200,
       rating: 4.8,
       badge: "New",
       image: "/assets/hero-banner-3.png",
-      description: "All-day breathable comfort featuring traditional hand block motifs."
+      description: "Airy Kota Doria weave with delicate gold foil accents and soft cotton lining."
     }
   ];
 
@@ -53,6 +53,11 @@ export default function ChudidharCatalog({ onAddToCart, onOpenSizeGuide }) {
       backgroundColor: 'var(--color-bg-subtle)',
       borderTop: '1px solid var(--color-border)'
     }}>
+      {/* Anchor targets for navbar items */}
+      <div id="raw-silk" style={{ position: 'relative', top: '-100px' }} />
+      <div id="pure-cotton" style={{ position: 'relative', top: '-100px' }} />
+      <div id="kota" style={{ position: 'relative', top: '-100px' }} />
+
       <div style={{ maxWidth: '1380px', margin: '0 auto' }}>
         
         {/* Section Header */}
@@ -81,10 +86,10 @@ export default function ChudidharCatalog({ onAddToCart, onOpenSizeGuide }) {
             flexWrap: 'wrap'
           }}>
             {[
-              { id: 'all', name: 'All Chudidhar Sets' },
-              { id: 'chanderi', name: 'Chanderi Silks' },
-              { id: 'anarkali', name: 'Festive Anarkalis' },
-              { id: 'everyday', name: 'Everyday Cottons' }
+              { id: 'all', name: 'All Collections' },
+              { id: 'raw-silk', name: 'Raw Silk' },
+              { id: 'pure-cotton', name: 'Pure Cotton' },
+              { id: 'kota', name: 'Kota' }
             ].map(tab => (
               <button
                 key={tab.id}
